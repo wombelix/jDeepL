@@ -10,15 +10,27 @@ public class Controller {
     @FXML
     private Label lblApiKey;
     private Settings settings = new Settings();
-    private final String LBLAPIPREFIX = "API Key: ";
 
     @FXML
     protected void initialize() {
-        lblApiKey.setText(LBLAPIPREFIX + settings.getApiKey());
+        lblApiKey.setText(getLblApiKeyText());
     }
     @FXML
     protected void onBtnSaveApiKeyClick() {
         settings.setApiKey(txtApiKey.getText());
-        lblApiKey.setText(LBLAPIPREFIX + settings.getApiKey());
+        lblApiKey.setText(getLblApiKeyText());
+    }
+
+    private String getLblApiKeyText() {
+        String apiKey = settings.getApiKey();
+        StringBuilder sb = new StringBuilder();
+        sb.append("API Key: ");
+        sb.append(apiKey);
+        if (apiKey.endsWith(":fx")) {
+            sb.append(" (DeepL API Free)");
+        } else {
+            sb.append(" (DeepL API Pro)");
+        }
+        return sb.toString();
     }
 }
