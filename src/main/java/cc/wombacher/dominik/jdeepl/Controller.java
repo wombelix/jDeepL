@@ -48,14 +48,10 @@ public class Controller {
 
     private String getLblApiKeyText() {
         String apiKey = settings.getApiKey();
-        StringBuilder sb = new StringBuilder();
-        sb.append("API Key: ");
-        sb.append(apiKey);
         if (apiKey.endsWith(":fx")) {
-            sb.append(" (DeepL API Free)");
+            return "DeepL API Free";
         } else {
-            sb.append(" (DeepL API Pro)");
+            return "DeepL API Pro";
         }
-        return sb.toString();
     }
 }
