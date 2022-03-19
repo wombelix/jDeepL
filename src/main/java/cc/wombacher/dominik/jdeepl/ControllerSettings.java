@@ -19,10 +19,7 @@ public class ControllerSettings {
     @FXML
     protected void onBtnSaveApiKeyClick() {
         settings.setApiKey(txtApiKey.getText());
-        // get a handle to the stage
         Stage stage = (Stage) btnSaveApiKey.getScene().getWindow();
-        // do what you have to do
         stage.close();
-
     }
 }

@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -36,6 +37,8 @@ public class Controller {
             FXMLLoader fxmlLoadSettings = new FXMLLoader(Application.class.getResource("settings.fxml"));
             Parent parent = fxmlLoadSettings.load();
             Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Settings");
             stage.setScene(new Scene(parent));
             stage.show();
         } catch(Exception e) {
