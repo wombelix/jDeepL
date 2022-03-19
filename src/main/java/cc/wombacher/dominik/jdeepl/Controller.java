@@ -1,17 +1,15 @@
 package cc.wombacher.dominik.jdeepl;
 
-import java.util.List;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
 
 public class Controller {
-    @FXML
-    private TextField txtApiKey;
     @FXML
     private Label lblApiKey;
     @FXML
@@ -28,10 +26,21 @@ public class Controller {
         boxSourceLang.getSelectionModel().select(5);
         boxTargetLang.getSelectionModel().select(3);
     }
+
+    /*
+     * Based on: https://stackoverflow.com/a/27178999
+     */
     @FXML
-    protected void onBtnSaveApiKeyClick() {
-        settings.setApiKey(txtApiKey.getText());
-        lblApiKey.setText(getLblApiKeyText());
+    protected void onBtnOpenSettingsClick(ActionEvent event) throws Exception {
+        try {
+            FXMLLoader fxmlLoadSettings = new FXMLLoader(Application.class.getResource("settings.fxml"));
+            Parent parent = fxmlLoadSettings.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(parent));
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private String getLblApiKeyText() {
