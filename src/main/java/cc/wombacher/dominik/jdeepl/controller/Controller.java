@@ -1,5 +1,8 @@
-package cc.wombacher.dominik.jdeepl;
+package cc.wombacher.dominik.jdeepl.controller;
 
+import cc.wombacher.dominik.jdeepl.Application;
+import cc.wombacher.dominik.jdeepl.Settings;
+import cc.wombacher.dominik.jdeepl.TranslationLanguage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +24,7 @@ public class Controller {
 
     @FXML
     protected void initialize() {
+        Application.getSettings();
         lblApiKey.setText(getLblApiKeyText());
         boxSourceLang.setItems(settings.getSourceLang());
         boxTargetLang.setItems(settings.getTargetLang());
