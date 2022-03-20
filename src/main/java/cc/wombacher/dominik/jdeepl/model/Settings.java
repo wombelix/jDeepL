@@ -1,8 +1,7 @@
-package cc.wombacher.dominik.jdeepl;
+package cc.wombacher.dominik.jdeepl.model;
 
 import java.util.prefs.Preferences;
 
-import cc.wombacher.dominik.jdeepl.model.TranslationLanguage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -18,7 +17,7 @@ public class Settings {
         this.apiType = "n/a";
     }
 
-    public Settings getInstance() {
+    public static Settings getInstance() {
         if (instance == null) {
             return new Settings();
         }

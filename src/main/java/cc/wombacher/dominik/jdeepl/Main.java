@@ -1,6 +1,7 @@
 package cc.wombacher.dominik.jdeepl;
 
 import cc.wombacher.dominik.jdeepl.model.Usage;
+import cc.wombacher.dominik.jdeepl.model.Settings;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,11 +14,6 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 import java.io.IOException;
 
 public class Main extends javafx.application.Application {
-    private static Settings settings;
-
-    public Main() {
-        this.settings = new Settings();
-    }
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoadView = new FXMLLoader(Main.class.getResource("mainView.fxml"));
@@ -26,10 +22,6 @@ public class Main extends javafx.application.Application {
         stage.setTitle("jDeepL - Cross Platform GUI");
         stage.setScene(sceneView);
         stage.show();
-    }
-
-    public static Settings getSettings() {
-        return settings;
     }
 
     public static void main(String[] args) {
@@ -42,7 +34,7 @@ public class Main extends javafx.application.Application {
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
         IDeepL service = retrofit.create(IDeepL.class);
-        Call<Usage> call = service.getUsage(settings.getApiKey());
+        Call<Usage> call = service.getUsage(Settings.getInstance().getApiKey());
         Response<Usage> response = null;
         try {
             response = call.execute();

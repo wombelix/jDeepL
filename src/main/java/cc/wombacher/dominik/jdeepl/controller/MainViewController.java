@@ -1,7 +1,7 @@
 package cc.wombacher.dominik.jdeepl.controller;
 
-import cc.wombacher.dominik.jdeepl.Application;
-import cc.wombacher.dominik.jdeepl.Settings;
+import cc.wombacher.dominik.jdeepl.Main;
+import cc.wombacher.dominik.jdeepl.model.Settings;
 import cc.wombacher.dominik.jdeepl.model.TranslationLanguage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,21 +13,19 @@ import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class Controller {
+public class MainViewController {
     @FXML
     private Label lblApiKey;
     @FXML
     private ComboBox<TranslationLanguage> boxSourceLang;
     @FXML
     private ComboBox<TranslationLanguage> boxTargetLang;
-    private Settings settings = new Settings();
 
     @FXML
     protected void initialize() {
-        Application.getSettings();
         lblApiKey.setText(getLblApiKeyText());
-        boxSourceLang.setItems(settings.getSourceLang());
-        boxTargetLang.setItems(settings.getTargetLang());
+        boxSourceLang.setItems(Settings.getInstance().getSourceLang());
+        boxTargetLang.setItems(Settings.getInstance().getTargetLang());
         boxSourceLang.getSelectionModel().select(5);
         boxTargetLang.getSelectionModel().select(3);
     }
@@ -51,7 +49,7 @@ public class Controller {
     }
 
     private String getLblApiKeyText() {
-        String apiKey = settings.getApiKey();
+        String apiKey = Settings.getInstance().getApiKey();
         if (apiKey.endsWith(":fx")) {
             return "DeepL API Free";
         } else {
