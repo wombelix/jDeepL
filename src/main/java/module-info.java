@@ -3,10 +3,10 @@ module cc.wombacher.dominik.jdeepl {
     requires javafx.fxml;
     requires java.prefs;
     requires java.net.http;
-    requires org.json;
-    requires com.fasterxml.jackson.databind;
+    requires retrofit2;
+    requires retrofit2.converter.jackson;
+    requires com.fasterxml.jackson.annotation;
 
-
-    opens cc.wombacher.dominik.jdeepl to javafx.fxml;
+    opens cc.wombacher.dominik.jdeepl;
     exports cc.wombacher.dominik.jdeepl;
 }
