@@ -1,4 +1,4 @@
-package cc.wombacher.dominik.jdeepl.models;
+package cc.wombacher.dominik.jdeepl.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 public class Usage {

@@ -1,4 +1,4 @@
-package cc.wombacher.dominik.jdeepl;
+package cc.wombacher.dominik.jdeepl.model;
 
 public class TranslationLanguage {
     private String id;

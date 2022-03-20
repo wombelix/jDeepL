@@ -36,7 +36,7 @@ public class MainViewController {
     @FXML
     protected void onBtnOpenSettingsClick(ActionEvent event) throws Exception {
         try {
-            FXMLLoader fxmlLoadSettings = new FXMLLoader(Application.class.getResource("settings.fxml"));
+            FXMLLoader fxmlLoadSettings = new FXMLLoader(Main.class.getResource("settingsView.fxml"));
             Parent parent = fxmlLoadSettings.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);

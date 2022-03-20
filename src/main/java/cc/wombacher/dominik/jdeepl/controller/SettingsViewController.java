@@ -1,12 +1,12 @@
 package cc.wombacher.dominik.jdeepl.controller;
 
-import cc.wombacher.dominik.jdeepl.Settings;
+import cc.wombacher.dominik.jdeepl.model.Settings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class ControllerSettings {
+public class SettingsViewController {
     @FXML
     private Button btnSaveApiKey;
     @FXML
