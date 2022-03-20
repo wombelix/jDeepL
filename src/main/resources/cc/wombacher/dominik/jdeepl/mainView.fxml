@@ -21,42 +21,36 @@
              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
            </columnConstraints>
            <rowConstraints>
-               <RowConstraints maxHeight="273.93428770701746" minHeight="10.0" prefHeight="56.50710264842371" vgrow="SOMETIMES" />
-             <RowConstraints maxHeight="538.2379948298201" minHeight="10.0" prefHeight="503.32997862498615" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="273.93428770701746" minHeight="10.0" prefHeight="31.913273934400777" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="563.5127192672728" minHeight="10.0" prefHeight="537.5836453285132" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="538.2379948298201" minHeight="10.0" prefHeight="31.91592575401978" vgrow="SOMETIMES" />
            </rowConstraints>
             <children>
                <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
                <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                <ComboBox fx:id="boxSourceLang" prefWidth="150.0" />
                <ComboBox fx:id="boxTargetLang" prefWidth="150.0" GridPane.columnIndex="1" />
+               <Button mnemonicParsing="false" text="Translate" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+               <HBox prefHeight="16.0" prefWidth="401.0" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                  <children>
+                     <Label text="Type: " />
+                     <Label fx:id="lblApiType" text="lblApiType" />
+                     <Label text="Usage: ">
+                        <HBox.margin>
+                           <Insets left="20.0" />
+                        </HBox.margin>
+                     </Label>
+                     <Label fx:id="lblApiUsage" text="lblApiUsage">
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                     </Label>
+                  </children>
+               </HBox>
+               <Button mnemonicParsing="false" onAction="#onBtnOpenSettingsClick" text="Settings" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
             </children>
          </GridPane>
       </center>
-      <bottom>
-         <HBox prefHeight="6.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_CENTER">
-            <children>
-               <Label text="Type: " />
-               <Label fx:id="lblApiType" text="lblApiType" />
-               <Label text="Usage: ">
-                  <HBox.margin>
-                     <Insets left="20.0" />
-                  </HBox.margin>
-               </Label>
-               <Label fx:id="lblApiUsage" text="lblApiUsage">
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin>
-               </Label>
-            </children>
-         </HBox>
-      </bottom>
-      <top>
-         <HBox prefHeight="20.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-               <Button mnemonicParsing="false" onAction="#onBtnOpenSettingsClick" text="Settings" />
-            </children>
-         </HBox>
-      </top>
    </BorderPane>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
