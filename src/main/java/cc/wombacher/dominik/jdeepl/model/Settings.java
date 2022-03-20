@@ -2,6 +2,7 @@ package cc.wombacher.dominik.jdeepl;
 
 import java.util.prefs.Preferences;
 
+import cc.wombacher.dominik.jdeepl.model.TranslationLanguage;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -9,12 +10,23 @@ public class Settings {
     private Preferences prefs;
     private String apiUrl;
     private String apiType;
+    private static Settings instance = null;
 
     public Settings() {
         this.prefs = Preferences.userRoot().node("cc/wombacher/dominik/jdeepl");
         this.apiUrl = "n/a";
         this.apiType = "n/a";
     }
+
+    public Settings getInstance() {
+        if (instance == null) {
+            return new Settings();
+        }
+        else {
+            return instance;
+        }
+    }
+
     public void setApiKey(String apiKey) {
         this.prefs.put("apikey", apiKey);
         if (apiKey.endsWith(":fx")) {

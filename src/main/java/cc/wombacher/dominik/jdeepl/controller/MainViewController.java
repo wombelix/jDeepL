@@ -2,7 +2,7 @@ package cc.wombacher.dominik.jdeepl.controller;
 
 import cc.wombacher.dominik.jdeepl.Application;
 import cc.wombacher.dominik.jdeepl.Settings;
-import cc.wombacher.dominik.jdeepl.TranslationLanguage;
+import cc.wombacher.dominik.jdeepl.model.TranslationLanguage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

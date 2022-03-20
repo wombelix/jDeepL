@@ -1,5 +1,6 @@
-package cc.wombacher.dominik.jdeepl;
+package cc.wombacher.dominik.jdeepl.controller;
 
+import cc.wombacher.dominik.jdeepl.Settings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

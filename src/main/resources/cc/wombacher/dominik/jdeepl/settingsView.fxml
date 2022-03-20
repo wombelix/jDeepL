@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cc.wombacher.dominik.jdeepl.ControllerSettings">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cc.wombacher.dominik.jdeepl.controller.SettingsViewController">
    <children>
       <Button fx:id="btnSaveApiKey" layoutX="389.0" layoutY="11.0" onAction="#onBtnSaveApiKeyClick" text="Save" />
       <TextField fx:id="txtApiKey" layoutX="109.0" layoutY="10.0" prefHeight="27.0" prefWidth="270.0" />

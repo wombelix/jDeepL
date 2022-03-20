@@ -9,6 +9,8 @@ module cc.wombacher.dominik.jdeepl {
 
     opens cc.wombacher.dominik.jdeepl;
     exports cc.wombacher.dominik.jdeepl;
-    exports cc.wombacher.dominik.jdeepl.models;
-    opens cc.wombacher.dominik.jdeepl.models;
+    exports cc.wombacher.dominik.jdeepl.model;
+    opens cc.wombacher.dominik.jdeepl.model;
+    exports cc.wombacher.dominik.jdeepl.controller;
+    opens cc.wombacher.dominik.jdeepl.controller;
 }

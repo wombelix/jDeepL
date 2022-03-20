@@ -1,6 +1,6 @@
 package cc.wombacher.dominik.jdeepl;
 
-import cc.wombacher.dominik.jdeepl.models.Usage;
+import cc.wombacher.dominik.jdeepl.model.Usage;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

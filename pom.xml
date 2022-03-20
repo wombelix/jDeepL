@@ -75,7 +75,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>cc.wombacher.dominik.jdeepl/cc.wombacher.dominik.jdeepl.Application
+                            <mainClass>cc.wombacher.dominik.jdeepl/cc.wombacher.dominik.jdeepl.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
