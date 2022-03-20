@@ -7,16 +7,35 @@ import javafx.collections.ObservableList;
 
 public class Settings {
     private Preferences prefs;
+    private String apiUrl;
+    private String apiType;
 
     public Settings() {
         this.prefs = Preferences.userRoot().node("cc/wombacher/dominik/jdeepl");
+        this.apiUrl = "n/a";
+        this.apiType = "n/a";
     }
     public void setApiKey(String apiKey) {
         this.prefs.put("apikey", apiKey);
+        if (apiKey.endsWith(":fx")) {
+            this.apiUrl = "https://api-free.deepl.com/v2/";
+            this.apiType = "DeepL API Free";
+        } else {
+            this.apiUrl = "https://api.deepl.com/v2/";
+            this.apiType = "DeepL API Pro";
+        }
     }
 
     public String getApiKey() {
         return this.prefs.get("apikey", "n/a");
+    }
+
+    public String getApiUrl() {
+        return this.apiUrl;
+    }
+
+    public String getApiType() {
+        return this.apiType;
     }
 
     public ObservableList getSourceLang() {
