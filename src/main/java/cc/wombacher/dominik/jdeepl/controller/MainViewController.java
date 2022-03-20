@@ -28,7 +28,12 @@ public class MainViewController {
     protected void initialize() {
         DeepL deepl = new DeepL();
         lblApiType.setText(Settings.getInstance().getApiType());
-        lblApiUsage.setText(deepl.getUsage().toString());
+        try {
+            lblApiUsage.setText(deepl.getUsage().toString());
+        }
+        catch (Exception eIn) {
+            lblApiUsage.setText("n/a");
+        }
         boxSourceLang.setItems(Settings.getInstance().getSourceLang());
         boxTargetLang.setItems(Settings.getInstance().getTargetLang());
         boxSourceLang.getSelectionModel().select(5);

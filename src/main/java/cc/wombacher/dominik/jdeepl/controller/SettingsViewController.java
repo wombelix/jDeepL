@@ -1,8 +1,10 @@
 package cc.wombacher.dominik.jdeepl.controller;
 
+import cc.wombacher.dominik.jdeepl.model.DeepL;
 import cc.wombacher.dominik.jdeepl.model.Settings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -11,16 +13,25 @@ public class SettingsViewController {
     private Button btnSaveApiKey;
     @FXML
     private TextField txtApiKey;
-    private Settings settings = new Settings();
+    @FXML
+    private Label lblApiKeyUpdateStatus;
 
     @FXML
     protected void initialize() {
-        txtApiKey.setText(settings.getApiKey());
+        txtApiKey.setText(Settings.getInstance().getApiKey());
     }
     @FXML
     protected void onBtnSaveApiKeyClick() {
-        settings.setApiKey(txtApiKey.getText());
-        Stage stage = (Stage) btnSaveApiKey.getScene().getWindow();
-        stage.close();
+        DeepL deepl = new DeepL();
+        try {
+            String apiKey = txtApiKey.getText();
+            deepl.getUsage(apiKey, Settings.getInstance().mapApiKeyToUrl(apiKey));
+            Settings.getInstance().setApiKey(txtApiKey.getText());
+            Stage stage = (Stage) btnSaveApiKey.getScene().getWindow();
+            stage.close();
+        }
+        catch (Exception eIn) {
+            lblApiKeyUpdateStatus.setText("Error: API Key invalid or API not reachable, Key not saved!");
+        }
     }
 }

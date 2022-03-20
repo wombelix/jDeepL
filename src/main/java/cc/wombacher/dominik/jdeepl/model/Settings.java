@@ -13,7 +13,7 @@ public class Settings {
 
     public Settings() {
         this.prefs = Preferences.userRoot().node("cc/wombacher/dominik/jdeepl");
-        setApiKeyAndType(getApiKey());
+        setApiUrlAndType(getApiKey());
     }
 
     public static Settings getInstance() {
@@ -25,19 +25,30 @@ public class Settings {
         }
     }
 
-    private void setApiKeyAndType(String apiKey) {
+    private void setApiUrlAndType(String apiKey) {
+        this.apiUrl = mapApiKeyToUrl(apiKey);
+        this.apiType = mapApiKeyToType(apiKey);
+    }
+
+    public String mapApiKeyToUrl(String apiKey) {
         if (apiKey.endsWith(":fx")) {
-            this.apiUrl = "https://api-free.deepl.com/v2/";
-            this.apiType = "DeepL API Free";
+            return "https://api-free.deepl.com/v2/";
         } else {
-            this.apiUrl = "https://api.deepl.com/v2/";
-            this.apiType = "DeepL API Pro";
+            return "https://api.deepl.com/v2/";
+        }
+    }
+
+    public String mapApiKeyToType(String apiKey) {
+        if (apiKey.endsWith(":fx")) {
+            return "DeepL API Free";
+        } else {
+            return "DeepL API Pro";
         }
     }
 
     public void setApiKey(String apiKey) {
         this.prefs.put("apikey", apiKey);
-        setApiKeyAndType(getApiKey());
+        setApiUrlAndType(getApiKey());
     }
 
     public String getApiKey() {
