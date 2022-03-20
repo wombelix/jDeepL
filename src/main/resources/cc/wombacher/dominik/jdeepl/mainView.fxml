@@ -35,7 +35,18 @@
       <bottom>
          <HBox prefHeight="6.0" prefWidth="200.0" BorderPane.alignment="BOTTOM_CENTER">
             <children>
-               <Label fx:id="lblApiKey" text="API Key: " />
+               <Label text="Type: " />
+               <Label fx:id="lblApiType" text="lblApiType" />
+               <Label text="Usage: ">
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </Label>
+               <Label fx:id="lblApiUsage" text="lblApiUsage">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </Label>
             </children>
          </HBox>
       </bottom>

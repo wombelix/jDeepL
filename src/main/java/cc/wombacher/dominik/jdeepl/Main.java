@@ -25,25 +25,6 @@ public class Main extends javafx.application.Application {
     }
 
     public static void main(String[] args) {
-        /*
-         * Requires VM Option '--add-opens java.base/java.lang.invoke=retrofit2' as Workaround to avoid Exception in Java 11
-         * see: https://github.com/square/retrofit/issues/3448
-         */
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api-free.deepl.com/v2/")
-                .addConverterFactory(JacksonConverterFactory.create())
-                .build();
-        IDeepL service = retrofit.create(IDeepL.class);
-        Call<Usage> call = service.getUsage(Settings.getInstance().getApiKey());
-        Response<Usage> response = null;
-        try {
-            response = call.execute();
-        }
-        catch (IOException eIn) {
-            throw new RuntimeException(eIn);
-        }
-        Usage usage = response.body();
-        System.out.println(usage.getUsageCharacterCount() + " / " + usage.getUsageCharaceterLimit());
         launch();
     }
 }

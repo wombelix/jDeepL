@@ -1,6 +1,7 @@
 package cc.wombacher.dominik.jdeepl.controller;
 
 import cc.wombacher.dominik.jdeepl.Main;
+import cc.wombacher.dominik.jdeepl.model.DeepL;
 import cc.wombacher.dominik.jdeepl.model.Settings;
 import cc.wombacher.dominik.jdeepl.model.TranslationLanguage;
 import javafx.event.ActionEvent;
@@ -15,7 +16,9 @@ import javafx.stage.Stage;
 
 public class MainViewController {
     @FXML
-    private Label lblApiKey;
+    private Label lblApiType;
+    @FXML
+    private Label lblApiUsage;
     @FXML
     private ComboBox<TranslationLanguage> boxSourceLang;
     @FXML
@@ -23,7 +26,9 @@ public class MainViewController {
 
     @FXML
     protected void initialize() {
-        lblApiKey.setText(getLblApiKeyText());
+        DeepL deepl = new DeepL();
+        lblApiType.setText(Settings.getInstance().getApiType());
+        lblApiUsage.setText(deepl.getUsage().toString());
         boxSourceLang.setItems(Settings.getInstance().getSourceLang());
         boxTargetLang.setItems(Settings.getInstance().getTargetLang());
         boxSourceLang.getSelectionModel().select(5);
@@ -45,15 +50,6 @@ public class MainViewController {
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();
-        }
-    }
-
-    private String getLblApiKeyText() {
-        String apiKey = Settings.getInstance().getApiKey();
-        if (apiKey.endsWith(":fx")) {
-            return "DeepL API Free";
-        } else {
-            return "DeepL API Pro";
         }
     }
 }

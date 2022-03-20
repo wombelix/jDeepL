@@ -14,4 +14,8 @@ public class Usage {
     public Integer getUsageCharaceterLimit() {
         return this.usageCharaceterLimit;
     }
+    @Override
+    public String toString() {
+        return this.usageCharacterCount + " / " + this.usageCharaceterLimit;
+    }
 }
