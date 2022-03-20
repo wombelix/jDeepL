@@ -18,8 +18,6 @@ public class ControllerSettings {
     }
     @FXML
     protected void onBtnSaveApiKeyClick() {
-        DeepLRestAPI api = new DeepLRestAPI();
-        api.updateUsage();
         settings.setApiKey(txtApiKey.getText());
         Stage stage = (Stage) btnSaveApiKey.getScene().getWindow();
         stage.close();
