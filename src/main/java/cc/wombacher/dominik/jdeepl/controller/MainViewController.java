@@ -1,8 +1,11 @@
 package cc.wombacher.dominik.jdeepl.controller;
 
+import java.util.Map;
+
 import cc.wombacher.dominik.jdeepl.Main;
 import cc.wombacher.dominik.jdeepl.model.DeepL;
 import cc.wombacher.dominik.jdeepl.model.Settings;
+import cc.wombacher.dominik.jdeepl.model.Translate;
 import cc.wombacher.dominik.jdeepl.model.TranslationLanguage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -23,6 +27,10 @@ public class MainViewController {
     private ComboBox<TranslationLanguage> boxSourceLang;
     @FXML
     private ComboBox<TranslationLanguage> boxTargetLang;
+    @FXML
+    private TextArea txtSourceText;
+    @FXML
+    private TextArea txtTargetText;
 
     @FXML
     protected void initialize() {
@@ -56,5 +64,20 @@ public class MainViewController {
         } catch(Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    protected void onBtnTranslateTextClick(ActionEvent event) throws Exception {
+        txtTargetText.clear();
+        DeepL deepl = new DeepL();
+        Translate translate = deepl.getTranslate(
+                txtSourceText.getText(),
+                boxSourceLang.getSelectionModel().getSelectedItem().getId(),
+                boxTargetLang.getSelectionModel().getSelectedItem().getId()
+                );
+        for (Map<String, String> result : translate.getTranslations()) {
+            txtTargetText.appendText(result.get("text"));
+        }
+        lblApiUsage.setText(deepl.getUsage().toString());
     }
 }

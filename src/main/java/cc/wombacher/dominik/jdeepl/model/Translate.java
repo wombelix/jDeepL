@@ -1,0 +1,12 @@
+package cc.wombacher.dominik.jdeepl.model;
+
+import java.util.List;
+import java.util.Map;
+
+public class Translate {
+    private List<Map<String, String>> translations;
+
+    public List<Map<String, String>> getTranslations() {
+        return this.translations;
+    }
+}

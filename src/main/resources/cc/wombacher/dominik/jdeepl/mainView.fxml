@@ -26,11 +26,11 @@
                <RowConstraints maxHeight="538.2379948298201" minHeight="10.0" prefHeight="31.91592575401978" vgrow="SOMETIMES" />
            </rowConstraints>
             <children>
-               <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
-               <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <TextArea fx:id="txtSourceText" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="1" />
+               <TextArea fx:id="txtTargetText" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                <ComboBox fx:id="boxSourceLang" prefWidth="150.0" />
                <ComboBox fx:id="boxTargetLang" prefWidth="150.0" GridPane.columnIndex="1" />
-               <Button mnemonicParsing="false" text="Translate" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+               <Button mnemonicParsing="false" onAction="#onBtnTranslateTextClick" text="Translate" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
                <HBox prefHeight="16.0" prefWidth="401.0" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
                   <children>
                      <Label text="Type: " />
