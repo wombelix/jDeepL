@@ -1,15 +1,12 @@
 package cc.wombacher.dominik.jdeepl;
 
-import cc.wombacher.dominik.jdeepl.model.Usage;
-import cc.wombacher.dominik.jdeepl.model.Settings;
+import com.github.kwhat.jnativehook.GlobalScreen;
+import com.github.kwhat.jnativehook.NativeHookException;
+
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import retrofit2.Call;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.io.IOException;
 
@@ -25,6 +22,17 @@ public class Main extends javafx.application.Application {
     }
 
     public static void main(String[] args) {
+        try {
+            GlobalScreen.registerNativeHook();
+        }
+        catch (NativeHookException ex) {
+            System.err.println("Keyboard Listener registration failed");
+            System.err.println(ex.getMessage());
+            System.exit(1);
+        }
+
+        GlobalScreen.addNativeKeyListener(new KeyboardListener());
+
         launch();
     }
 }
