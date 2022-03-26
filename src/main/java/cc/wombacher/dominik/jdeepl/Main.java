@@ -2,10 +2,11 @@ package cc.wombacher.dominik.jdeepl;
 
 import com.github.kwhat.jnativehook.GlobalScreen;
 import com.github.kwhat.jnativehook.NativeHookException;
+import com.dustinredmond.fxtrayicon.FXTrayIcon;
 
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -15,8 +16,16 @@ public class Main extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoadView = new FXMLLoader(Main.class.getResource("mainView.fxml"));
         Scene sceneView = new Scene(fxmlLoadView.load());
-        stage.onCloseRequestProperty().setValue(e -> Platform.exit());
-        stage.setTitle("jDeepL - Cross Platform GUI");
+
+        FXTrayIcon trayIcon = new FXTrayIcon.Builder(
+                stage, getClass().getResource("translate.png"), 32, 32)
+                .addExitMenuItem()
+                .applicationTitle("jDeepL")
+                .show()
+                .build();
+
+        stage.setTitle("jDeepL - Cross Platform Translator");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("translate.png")));
         stage.setScene(sceneView);
         stage.show();
     }
