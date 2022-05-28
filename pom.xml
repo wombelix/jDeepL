@@ -70,6 +70,11 @@ SPDX-License-Identifier: CC-BY-SA-4.0
             <artifactId>FXTrayIcon</artifactId>
             <version>3.1.2</version>
         </dependency>
+        <dependency>
+            <groupId>team.yi.tools</groupId>
+            <artifactId>semantic-gitlog</artifactId>
+            <version>0.7.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -103,6 +108,27 @@ SPDX-License-Identifier: CC-BY-SA-4.0
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>team.yi.maven.plugin</groupId>
+                <artifactId>maven-semantic-gitlog</artifactId>
+                <version>0.22.2</version>
+                <configuration>
+                    <fileSets>
+                        <fileSet>
+                            <target>${project.basedir}/CHANGELOG.md</target>
+                            <template>${project.basedir}/src/main/resources/CHANGELOG.md.mustache</template>
+                        </fileSet>
+                    </fileSets>
+                    <jsonFile>${project.basedir}/CHANGELOG.json</jsonFile>
+                    <strategy>slow</strategy>
+                    <toRef>semver</toRef>
+                    <issueUrlTemplate>${project.scm.url}/issues/:issueId</issueUrlTemplate>
+                    <commitUrlTemplate>${project.scm.url}/commit/:commitId</commitUrlTemplate>
+                    <mentionUrlTemplate>https://github.com/:username</mentionUrlTemplate>
+                    <updateProjectVersion>true</updateProjectVersion>
+                    <derivedVersionMark>NEXT_VERSION:==</derivedVersionMark>
+                </configuration>
             </plugin>
         </plugins>
     </build>
