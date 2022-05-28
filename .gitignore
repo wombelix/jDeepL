@@ -1,7 +1,14 @@
+# SPDX-FileCopyrightText: 2022 Dominik Wombacher <dominik@wombacher.cc>
+#
+# SPDX-License-Identifier: CC0-1.0
+
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+.idea/*
+.mvn/*
+mvnw*
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
