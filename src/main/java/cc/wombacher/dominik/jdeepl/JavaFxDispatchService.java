@@ -1,8 +1,9 @@
 /*
- https://stackoverflow.com/a/45423466
- CC BY-SA 4.0
- Alex Barker
+ * SPDX-FileCopyrightText: 2017 Alex Barker - https://stackoverflow.com/a/45423466
+ *
+ * SPDX-License-Identifier: CC-BY-SA-4.0
  */
+
 package cc.wombacher.dominik.jdeepl;
 
 import javafx.application.Platform;

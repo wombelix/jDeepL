@@ -1,3 +1,9 @@
+/*
+ * SPDX-FileCopyrightText: 2022 Dominik Wombacher <dominik@wombacher.cc>
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 module cc.wombacher.dominik.jdeepl {
     requires javafx.controls;
     requires javafx.fxml;
