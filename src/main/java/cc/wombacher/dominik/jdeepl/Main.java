@@ -31,6 +31,8 @@ public class Main extends javafx.application.Application {
     }
 
     public static void main(String[] args) {
+        GlobalScreen.setEventDispatcher(new JavaFxDispatchService());
+
         try {
             GlobalScreen.registerNativeHook();
         }
@@ -39,8 +41,6 @@ public class Main extends javafx.application.Application {
             System.err.println(ex.getMessage());
             System.exit(1);
         }
-
-        GlobalScreen.addNativeKeyListener(new KeyboardListener());
 
         launch();
     }
