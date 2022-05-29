@@ -7,7 +7,7 @@ SPDX-License-Identifier: CC0-1.0
 
     <groupId>cc.wombacher.dominik</groupId>
     <artifactId>jDeepL</artifactId>
-    <version>0.6.3</version>
+    <version>0.7.2</version>
     <name>jDeepL</name>
 
     <scm>
