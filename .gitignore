@@ -9,6 +9,7 @@ target/
 .idea/*
 .mvn/*
 mvnw*
+pom.xml.gitlogBackup
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
