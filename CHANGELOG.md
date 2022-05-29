@@ -1,7 +1,9 @@
 <!--
- SPDX-FileCopyrightText: 2022 Dominik Wombacher <dominik@wombacher.cc>
- SPDX-License-Identifier: CC0-1.0
+SPDX-FileCopyrightText: 2022 Dominik Wombacher <dominik@wombacher.cc>
+
+SPDX-License-Identifier: CC0-1.0
 -->
+
 # Changelog
 
 ## 0.6.3 (2022-05-29)
