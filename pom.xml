@@ -1,20 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!--
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--
 SPDX-FileCopyrightText: 2022 Dominik Wombacher <dominik@wombacher.cc>
 
-SPDX-License-Identifier: CC-BY-SA-4.0
--->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+SPDX-License-Identifier: CC0-1.0
+--><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cc.wombacher.dominik</groupId>
     <artifactId>jDeepL</artifactId>
-    <version>0.0.1</version>
+    <version>0.6.3</version>
     <name>jDeepL</name>
+
+    <scm>
+        <url>https://dominik.wombacher.cc/~git/jDeepL</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -122,10 +120,8 @@ SPDX-License-Identifier: CC-BY-SA-4.0
                     </fileSets>
                     <jsonFile>${project.basedir}/CHANGELOG.json</jsonFile>
                     <strategy>slow</strategy>
-                    <toRef>semver</toRef>
-                    <issueUrlTemplate>${project.scm.url}/issues/:issueId</issueUrlTemplate>
-                    <commitUrlTemplate>${project.scm.url}/commit/:commitId</commitUrlTemplate>
-                    <mentionUrlTemplate>https://github.com/:username</mentionUrlTemplate>
+                    <toRef>main</toRef>
+                    <commitUrlTemplate>${project.scm.url}/commit/?id=:commitId</commitUrlTemplate>
                     <updateProjectVersion>true</updateProjectVersion>
                     <derivedVersionMark>NEXT_VERSION:==</derivedVersionMark>
                 </configuration>
