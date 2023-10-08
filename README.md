@@ -1,5 +1,5 @@
 <!--
- SPDX-FileCopyrightText: 2022 Dominik Wombacher <dominik@wombacher.cc>
+ SPDX-FileCopyrightText: 2023 Dominik Wombacher <dominik@wombacher.cc>
  SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # jDeepL
@@ -8,7 +8,7 @@ Unofficial DeepL App / GUI for Linux based on JavaFX.
 
 Developed and tested on openSUSE Tumbleweed, KDE Plasma and OpenJDK 11.
 
-[![REUSE status](https://api.reuse.software/badge/dominik.wombacher.cc/~git/jDeepL)](https://api.reuse.software/info/dominik.wombacher.cc/~git/jDeepL)
+[![REUSE status](https://api.reuse.software/badge/git.sr.ht/~wombelix/jDeepL)](https://api.reuse.software/info/git.sr.ht/~wombelix/jDeepL)
 
 # Table of Content
 
@@ -37,18 +37,18 @@ The Shortcut `CTRL + C + C`, similar to the DeepL Windows App, will:
 
 # Contribution
 
-Please don't hesitate to provide Feedback, open an Issue or create an Pull / Merge Request.
-
-Feddback, Bug Reports or Patches via [eMail](https://dominik.wombacher.cc/pages/contact.html) are also always welcome.
-
-Just pick the workflow or platform you prefer and are most comfortable with.
-
-The primary location of the Source Code is https://dominik.wombacher.cc/~git/jDeepL/
+The primary location of the Source Code is: https://git.sr.ht/~wombelix/jDeepL
 
 Mirrors of the repository are available on 
 [Codeberg](https://codeberg.org/wombelix/jDeepL), 
 [Gitlab](https://gitlab.com/wombelix/jDeepL) and 
 [Github](https://github.com/wombelix/jDeepL).
+
+Please don't hesitate to provide Feedback, open an Issue or create an Pull / Merge Request.
+
+Just pick the workflow or platform you prefer and are most comfortable with.
+
+Feedback, Bug Reports or Patches via [eMail](https://dominik.wombacher.cc/pages/contact.html) are also always welcome.
 
 # License
 
