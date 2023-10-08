@@ -13,7 +13,7 @@ module cc.wombacher.dominik.jdeepl {
     requires retrofit2.converter.jackson;
     requires com.fasterxml.jackson.annotation;
     requires com.github.kwhat.jnativehook;
-    requires FXTrayIcon;
+    requires com.dustinredmond.fxtrayicon;
 
     opens cc.wombacher.dominik.jdeepl;
     exports cc.wombacher.dominik.jdeepl;
