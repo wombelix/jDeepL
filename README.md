@@ -35,6 +35,22 @@ The Shortcut `CTRL + C + C`, similar to the DeepL Windows App, will:
 * Paste the earlier copied text
 * Trigger the Translation
 
+# Build
+
+Clone the repository from your preferred location (Primary: [sourcehut](https://git.sr.ht/~wombelix/jDeepL) / 
+Mirror: [codeberg](https://codeberg.org/wombelix/jDeepL), [gitlab](https://gitlab.com/wombelix/jDeepL), [github](https://github.com/wombelix/jDeepL)).
+
+To build the code, ensure you have a SDK in version 11 installed, 
+you can use the package manager of your Linux Distribution or try [sdkman](https://sdkman.io).
+
+You also need [Apache Maven](https://maven.apache.org/install.html), either use the manual installation method, 
+your package manager or the version shipped with your IDE.
+
+The Project is pre-configured to compile a fat jar file by running `mvn compile package`. 
+This command will create the file `shade/jDeepL.jar`, to launch `jDeepL` run `java -jar shade/jDeepL.jar`.
+
+You can for sure also copy the `.jar` file to any other location you prefer and run it from there.
+
 # Contribution
 
 The primary location of the Source Code is: https://git.sr.ht/~wombelix/jDeepL
@@ -48,7 +64,7 @@ Please don't hesitate to provide Feedback, open an Issue or create an Pull / Mer
 
 Just pick the workflow or platform you prefer and are most comfortable with.
 
-Feedback, Bug Reports or Patches via [eMail](https://dominik.wombacher.cc/pages/contact.html) are also always welcome.
+Feedback, Bug Reports or Patches via [Email](https://dominik.wombacher.cc/pages/contact.html) are also always welcome.
 
 # License
 
