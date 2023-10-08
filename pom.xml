@@ -9,6 +9,7 @@ SPDX-License-Identifier: CC0-1.0
     <artifactId>jDeepL</artifactId>
     <version>0.7.2</version>
     <name>jDeepL</name>
+    <packaging>jar</packaging>
 
     <scm>
         <url>https://git.sr.ht/~wombelix/jDeepL</url>
@@ -17,6 +18,7 @@ SPDX-License-Identifier: CC0-1.0
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.8.2</junit.version>
+        <mainClass>cc.wombacher.dominik.jdeepl/cc.wombacher.dominik.jdeepl.Main</mainClass>
     </properties>
 
     <repositories>
@@ -105,16 +107,55 @@ SPDX-License-Identifier: CC0-1.0
                 <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
-                        <id>default-cli</id>
                         <configuration>
-                            <mainClass>cc.wombacher.dominik.jdeepl/cc.wombacher.dominik.jdeepl.Main</mainClass>
-                            <launcher>app</launcher>
-                            <jlinkZipName>app</jlinkZipName>
-                            <jlinkImageName>app</jlinkImageName>
+                            <mainClass>${mainClass}</mainClass>
+                            <launcher>jDeepL</launcher>
+                            <jlinkZipName>jDeepL</jlinkZipName>
+                            <jlinkImageName>jDeepL</jlinkImageName>
+                            <jlinkVerbose>true</jlinkVerbose>
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
+                            <options>
+                                <option>--add-opens</option>
+                                <option>java.base/java.lang.invoke=retrofit2</option>
+                                <option>--add-module</option>
+                                <option>javafx.controls,javafx.fxml</option>
+                            </options>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>project-classifier</shadedClassifierName>
+                            <outputFile>shade\${project.artifactId}.jar</outputFile>
+                            <transformers>
+                                <transformer implementation=
+                                                     "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>cc.wombacher.dominik.jdeepl.Launcher</mainClass>
+                                </transformer>
+                            </transformers>
+                            <filters>
+                                <filter> <!-- tom / madx - https://stackoverflow.com/a/64263739 -->
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
                         </configuration>
                     </execution>
                 </executions>

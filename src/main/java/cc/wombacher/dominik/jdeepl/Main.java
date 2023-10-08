@@ -20,7 +20,7 @@ import java.io.IOException;
 public class Main extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoadView = new FXMLLoader(Main.class.getResource("mainView.fxml"));
+        FXMLLoader fxmlLoadView = new FXMLLoader(getClass().getResource("mainView.fxml"));
         Scene sceneView = new Scene(fxmlLoadView.load());
 
         FXTrayIcon trayIcon = new FXTrayIcon.Builder(
