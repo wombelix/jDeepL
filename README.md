@@ -14,6 +14,8 @@ Developed and tested on openSUSE Tumbleweed, KDE Plasma and OpenJDK 11.
 
 * [Requirements](#requirements)
 * [Features](#features)
+* [Releases](#releases)
+* [Build](#build)
 * [Contribution](#contribution)
 * [License](#license)
 
@@ -34,6 +36,14 @@ The Shortcut `CTRL + C + C`, similar to the DeepL Windows App, will:
 * Restore the jDeepL Window if it's minimized or not in Focus
 * Paste the earlier copied text
 * Trigger the Translation
+
+# Releases
+
+There is no automated release process in place yet, I'm also still testing the most suitable packaging and Distribution format.
+
+For the time being, I'm going to manually publish new releases on my personal Nextcloud instance: https://hub.xlii.cc/s/an7E9E9bgFBpRG3
+
+Latest version: `v0.7.4` (SHA256 checksum: `206c13ec820451096bdf07f29e336c6827c750db11554d9dcc68812c8b56c796`)
 
 # Build
 
