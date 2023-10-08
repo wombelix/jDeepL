@@ -18,7 +18,7 @@ SPDX-License-Identifier: CC0-1.0
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>5.8.2</junit.version>
-        <mainClass>cc.wombacher.dominik.jdeepl/cc.wombacher.dominik.jdeepl.Main</mainClass>
+        <mainClass>cc.wombacher.dominik.jdeepl.Launcher</mainClass>
     </properties>
 
     <repositories>
@@ -105,26 +105,9 @@ SPDX-License-Identifier: CC0-1.0
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
-                <executions>
-                    <execution>
-                        <configuration>
-                            <mainClass>${mainClass}</mainClass>
-                            <launcher>jDeepL</launcher>
-                            <jlinkZipName>jDeepL</jlinkZipName>
-                            <jlinkImageName>jDeepL</jlinkImageName>
-                            <jlinkVerbose>true</jlinkVerbose>
-                            <noManPages>true</noManPages>
-                            <stripDebug>true</stripDebug>
-                            <noHeaderFiles>true</noHeaderFiles>
-                            <options>
-                                <option>--add-opens</option>
-                                <option>java.base/java.lang.invoke=retrofit2</option>
-                                <option>--add-module</option>
-                                <option>javafx.controls,javafx.fxml</option>
-                            </options>
-                        </configuration>
-                    </execution>
-                </executions>
+                <configuration>
+                    <mainClass>${mainClass}</mainClass>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -142,7 +125,7 @@ SPDX-License-Identifier: CC0-1.0
                             <outputFile>shade\${project.artifactId}.jar</outputFile>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>cc.wombacher.dominik.jdeepl.Launcher</mainClass>
+                                    <mainClass>${mainClass}</mainClass>
                                 </transformer>
                             </transformers>
                             <filters>
