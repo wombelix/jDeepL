@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2022 Dominik Wombacher <dominik@wombacher.cc>
+ * SPDX-FileCopyrightText: 2023 Dominik Wombacher <dominik@wombacher.cc>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
