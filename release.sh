@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# SPDX-FileCopyrightText: 2023 Dominik Wombacher <dominik@wombacher.cc>
+# SPDX-FileCopyrightText: 2025 Dominik Wombacher <dominik@wombacher.cc>
 #
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-License-Identifier: CC0-1.0
 
 # Get next release version and append 'v'
 export RELVER=v`./mvnw semantic-gitlog:derive | grep "NEXT_VERSION:==" | grep -o '[^\=\=]\+$'`
@@ -17,10 +17,8 @@ git commit -m "docs: pom.xml version bumped, Changelogs generated for Release $R
 # Tag Release
 git tag $RELVER
 
-# Push Release Origin
-git push origin main
-git push origin $RELVER
+# Push main branch with skip-ci to avoid triggering workflows
+git push origin main -o skip-ci
 
-# Push Release to Mirrors
-git push mirror main
-git push mirror $RELVER
+# Push tag (triggers sr.ht build git mirroring)
+git push origin $RELVER
