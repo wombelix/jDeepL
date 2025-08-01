@@ -24,7 +24,8 @@ public class Main extends javafx.application.Application {
         Scene sceneView = new Scene(fxmlLoadView.load());
 
         FXTrayIcon trayIcon = new FXTrayIcon.Builder(
-                stage, getClass().getResource("translate.png"), 32, 32)
+                stage, getClass().getResource("translate.png"))
+                .setIconSize(32, 32)
                 .addExitMenuItem()
                 .applicationTitle("jDeepL")
                 .show()
