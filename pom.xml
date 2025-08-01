@@ -39,12 +39,12 @@ SPDX-License-Identifier: CC0-1.0
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>11.0.2</version>
+            <version>21.0.8</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>11.0.2</version>
+            <version>21.0.8</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
