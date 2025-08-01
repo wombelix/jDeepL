@@ -22,6 +22,8 @@ tasks:
       cd build-helper-scripts
       source git-mirror.sh
 
+      cd ../jDeepL
+
       git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_GITHUB"
       git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_GITLAB"
       git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_CODEBERG"
