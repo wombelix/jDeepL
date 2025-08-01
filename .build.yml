@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2025 Dominik Wombacher <dominik@wombacher.cc>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+image: debian/stable
+
+sources:
+  - https://git.sr.ht/~wombelix/jDeepl
+  - https://git.sr.ht/~wombelix/build-helper-scripts
+
+secrets:
+  - 5b076ab5-1361-4d71-905b-4ff8c836c62c
+
+environment:
+  GIT_MIRROR_SSH_KEY: ~/.ssh/5b076ab5-1361-4d71-905b-4ff8c836c62c
+  GIT_MIRROR_GITHUB: git@github.com:wombelix/jDeepl.git
+  GIT_MIRROR_GITLAB: git@gitlab.com:wombelix/jDeepl.git
+  GIT_MIRROR_CODEBERG: git@codeberg.org:wombelix/jDeepl.git
+
+tasks:
+  - mirror: |
+      cd build-helper-scripts
+      source git-mirror.sh
+
+      git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_GITHUB"
+      git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_GITLAB"
+      git_mirror "$GIT_MIRROR_SSH_KEY" "$GIT_MIRROR_CODEBERG"
+
+triggers:
+  - action: email
+    condition: failure
+    to: dominik@wombacher.cc
