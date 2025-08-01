@@ -19,10 +19,6 @@ public class DeepL {
     }
 
     public Usage getUsage(String apiKey, String apiUrl) throws Exception {
-        /*
-         * Requires VM Option '--add-opens java.base/java.lang.invoke=retrofit2' as Workaround to avoid Exception in Java 11
-         * see: https://github.com/square/retrofit/issues/3448
-         */
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(apiUrl)
                 .addConverterFactory(JacksonConverterFactory.create())
@@ -35,10 +31,6 @@ public class DeepL {
     }
 
     public Translate getTranslate(String sourceText, String sourceLanguage, String targetLanguage) throws Exception {
-        /*
-         * Requires VM Option '--add-opens java.base/java.lang.invoke=retrofit2' as Workaround to avoid Exception in Java 11
-         * see: https://github.com/square/retrofit/issues/3448
-         */
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Settings.getInstance().getApiUrl())
                 .addConverterFactory(JacksonConverterFactory.create())
