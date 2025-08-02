@@ -10,6 +10,8 @@ Unofficial DeepL App / GUI for Linux based on JavaFX.
 Developed and tested on openSUSE Tumbleweed with KDE Plasma 6 and Java 17.
 
 [![REUSE status](https://api.reuse.software/badge/git.sr.ht/~wombelix/jDeepL)](https://api.reuse.software/info/git.sr.ht/~wombelix/jDeepL)
+[![builds.sr.ht status](https://builds.sr.ht/~wombelix/jDeepL.svg)](https://builds.sr.ht/~wombelix/jDeepL?)
+[![Build and Release](https://github.com/wombelix/jDeepL/actions/workflows/release.yml/badge.svg)](https://github.com/wombelix/jDeepL/actions/workflows/release.yml)
 
 ## Quick Start
 
