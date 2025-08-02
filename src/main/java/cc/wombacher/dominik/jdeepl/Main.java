@@ -31,7 +31,9 @@ public class Main extends javafx.application.Application {
                 .show()
                 .build();
 
-        stage.setTitle("jDeepL - Cross Platform Translator");
+        String version = getClass().getPackage().getImplementationVersion();
+        String title = version != null ? "jDeepL (" + version + ") - Cross Platform Translator" : "jDeepL - Cross Platform Translator";
+        stage.setTitle(title);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("translate.png")));
         stage.setScene(sceneView);
         stage.show();
