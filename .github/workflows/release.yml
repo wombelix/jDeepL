@@ -24,16 +24,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
-      
+
       - name: Build fat JAR
         run: mvn clean compile package
-      
+
       - name: Get version and set tag
         id: version
         run: |
@@ -47,10 +47,10 @@ jobs:
             echo "tag_name=v${VERSION}" >> $GITHUB_OUTPUT
           fi
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
-      
+
       - name: Rename JAR with version
         run: cp shade/jDeepL.jar jDeepL-${{ steps.version.outputs.version }}.jar
-      
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:

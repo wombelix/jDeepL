@@ -89,4 +89,3 @@
 ### Others
 
 - bump version of FXTrayIcon and retrofit2 ([f81493b1](https://git.sr.ht/~wombelix/jDeepL/commit/?id=f81493b1dbc015f4454b0e5b40f323920641a028))
-
