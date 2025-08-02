@@ -11,17 +11,17 @@ public class Usage {
     @JsonProperty("character_count")
     private Integer usageCharacterCount;
     @JsonProperty("character_limit")
-    private Integer usageCharaceterLimit;
+    private Integer usageCharacterLimit;
 
 
     public Integer getUsageCharacterCount() {
         return this.usageCharacterCount;
     }
-    public Integer getUsageCharaceterLimit() {
-        return this.usageCharaceterLimit;
+    public Integer getUsageCharacterLimit() {
+        return this.usageCharacterLimit;
     }
     @Override
     public String toString() {
-        return this.usageCharacterCount + " / " + this.usageCharaceterLimit;
+        return this.usageCharacterCount + " / " + this.usageCharacterLimit;
     }
 }
